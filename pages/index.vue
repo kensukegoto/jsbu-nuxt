@@ -1,6 +1,12 @@
 <template>
   <div class="container">
-    <BlockHeader />
+    <BlockHeader class="TheHeader" />
+    <main>
+      <section class="slider">
+        スライダー
+      </section>
+    </main>
+
   </div>
 </template>
 
@@ -16,5 +22,16 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-
+.TheHeader {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 80px;
+}
+main {
+  padding-top: 80px;
+}
+.slider {
+  position: relative;
+}
 </style>
