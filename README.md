@@ -1,3 +1,15 @@
+# 色
+
+```
+$kkk: #000;
+$black: #181818;
+$grey: #ccc;
+$greyLight: #eee;
+$greyDark: #555;
+$white: #fff;
+$yellow: #f0db4f;
+```
+
 # コミット
 
 ## ルール
@@ -15,4 +27,6 @@ INI  初期化
 
 ```
 INI  命名規則策定・Sass導入・デフォルトCSS設定
+ADD  ロゴ配置
+ADD  GNavi作成
 ```
