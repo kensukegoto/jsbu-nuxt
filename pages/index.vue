@@ -6,7 +6,7 @@
         <MVSlider class="MVSlider" />
       </client-only>
     </main>
-
+    {{ loadedPosts }}
   </div>
 </template>
 
@@ -20,6 +20,11 @@ export default Vue.extend({
   components: {
     TheHeader,
     MVSlider
+  },
+  computed: {
+    loadedPosts(){
+      return this.$store.state.items
+    }
   }
 })
 </script>
