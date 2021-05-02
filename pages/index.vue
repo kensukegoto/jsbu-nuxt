@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <BlockHeader class="TheHeader" />
+    <TheHeader class="TheHeader" />
     <main>
-      <section class="slider">
-        スライダー
-      </section>
+      <client-only>
+        <MVSlider class="MVSlider" />
+      </client-only>
     </main>
 
   </div>
@@ -12,11 +12,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import BlockHeader from '~/components/c1_block/TheHeader.vue'
+import TheHeader from '~/components/c1_block/TheHeader.vue'
+import MVSlider from '~/components/c1_block/MVSlider.vue'
 
 export default Vue.extend({
+
   components: {
-    BlockHeader
+    TheHeader,
+    MVSlider
   }
 })
 </script>
@@ -31,7 +34,12 @@ export default Vue.extend({
 main {
   padding-top: 80px;
 }
-.slider {
-  position: relative;
+.MVSlider{
+  width: 100%;
+  margin: 40px auto 0;
+  @include media(m){
+    width: 960px;
+    margin-top: 44px;
+  }
 }
 </style>

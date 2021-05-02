@@ -12,6 +12,7 @@ import Vue from 'vue'
 import TheLogo from '~/components/c4_element/TheLogo.vue'
 import GNavi from '~/components/c2_module/GNavi.vue'
 export default Vue.extend({
+  name: 'TheHeader',
   components: {
     TheLogo,
     GNavi

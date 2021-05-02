@@ -26,6 +26,7 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
+  name: 'GNavi',
   data: () => {
     return {
       active: false as boolean
