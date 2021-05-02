@@ -60,5 +60,8 @@ export default {
         options.loose = true;
       }
     }
-  }
+  },
+  serverMiddleware: [
+    "~/api"
+  ],
 }
