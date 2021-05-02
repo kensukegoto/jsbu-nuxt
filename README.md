@@ -29,4 +29,10 @@ INI  初期化
 INI  命名規則策定・Sass導入・デフォルトCSS設定
 ADD  ロゴ配置
 ADD  GNavi作成
+ADD  スライドショー作成
+ADD  JS部とは？
+ADD  記事一覧
+ADD  ページ上部へ戻る、フッター
+ADD  記事一覧ページの箱
+ADD  パン屑リスト
 ```
