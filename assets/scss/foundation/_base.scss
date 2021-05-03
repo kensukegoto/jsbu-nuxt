@@ -20,3 +20,14 @@ body{
     font-size: 1.6em;
   }
 }
+
+main {
+  @include media(m){
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+p {
+  line-height: 1.6;
+}

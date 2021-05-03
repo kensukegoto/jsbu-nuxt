@@ -3,8 +3,8 @@
     <TheHeader class="TheHeader" />
     <main>
       <MVSlider class="MVSlider" :pickup="pickup" />
+      <AboutJSbu class="AboutJSbu" />
     </main>
-    {{ pickup }}
   </div>
 </template>
 
@@ -12,12 +12,14 @@
 import Vue from 'vue'
 import TheHeader from '~/components/c1_block/TheHeader.vue'
 import MVSlider from '~/components/c1_block/MVSlider.vue'
+import AboutJSbu from '~/components/c1_block/AboutJSbu.vue'
 
 export default Vue.extend({
 
   components: {
     TheHeader,
-    MVSlider
+    MVSlider,
+    AboutJSbu
   },
   computed: {
     pickup(){
@@ -43,6 +45,13 @@ main {
   @include media(m){
     width: 960px;
     margin-top: 44px;
+  }
+}
+.AboutJSbu{
+  margin: 32px 14px 0;
+  @include media(m){
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 </style>
