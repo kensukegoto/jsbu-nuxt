@@ -6,6 +6,7 @@
       <AboutJSbu class="AboutJSbu" />
       <ArticleList class="ArticleList" :articles="all" />
     </main>
+    <TheFooter />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import TheHeader from '~/components/c1_block/TheHeader.vue'
 import MVSlider from '~/components/c1_block/MVSlider.vue'
 import AboutJSbu from '~/components/c1_block/AboutJSbu.vue'
 import ArticleList from '~/components/c1_block/ArticleList.vue'
+import TheFooter from '~/components/c1_block/TheFooter.vue'
 
 export default Vue.extend({
 
@@ -22,7 +24,8 @@ export default Vue.extend({
     TheHeader,
     MVSlider,
     AboutJSbu,
-    ArticleList
+    ArticleList,
+    TheFooter
   },
   computed: {
     all(){
