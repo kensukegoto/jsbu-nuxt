@@ -50,8 +50,9 @@ main {
 .AboutJSbu{
   margin: 32px 14px 0;
   @include media(m){
-    margin-right: 0;
-    margin-left: 0;
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 </style>
