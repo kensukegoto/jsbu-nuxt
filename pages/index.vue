@@ -4,6 +4,7 @@
     <main>
       <MVSlider class="MVSlider" :pickup="pickup" />
       <AboutJSbu class="AboutJSbu" />
+      <ArticleList class="ArticleList" :articles="all" />
     </main>
   </div>
 </template>
@@ -13,15 +14,20 @@ import Vue from 'vue'
 import TheHeader from '~/components/c1_block/TheHeader.vue'
 import MVSlider from '~/components/c1_block/MVSlider.vue'
 import AboutJSbu from '~/components/c1_block/AboutJSbu.vue'
+import ArticleList from '~/components/c1_block/ArticleList.vue'
 
 export default Vue.extend({
 
   components: {
     TheHeader,
     MVSlider,
-    AboutJSbu
+    AboutJSbu,
+    ArticleList
   },
   computed: {
+    all(){
+      return this.$store.getters['items/items'].all;
+    },
     pickup(){
       return this.$store.getters['items/items'].pickup;
     }
@@ -54,5 +60,8 @@ main {
     margin-right: auto;
     margin-left: auto;
   }
+}
+.ArticleList{
+  margin-top: 32px;
 }
 </style>

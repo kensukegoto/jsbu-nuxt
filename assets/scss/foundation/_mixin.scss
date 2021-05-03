@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,700|Martel:800|Noto+Sans+JP:400,700|Inconsolata&display=swap');
 
-@mixin english{
+@mixin font-for-english{
   font-family: 'Cabin', sans-serif;
 }
-@mixin number{
+@mixin font-for-number{
   font-family: 'Martel', serif;
 }
-@mixin date {
+@mixin font-for-date {
   font-family: 'Inconsolata', monospace;
 }
 
