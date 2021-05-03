@@ -11,13 +11,16 @@ export const getters = {
 }
 
 export const actions = {
-  setItems(vuexContext,items){
+  setItems(vuexContext, items){
     vuexContext.commit("setItems",items)
   }
 }
 
 export const mutations = {
   setItems(state,items){
-    state.items = items
+    const {key, list} = items;
+    let obj = {};
+    obj[key] = list;
+    state.items = { ...state.items, ...obj}
   }
 }

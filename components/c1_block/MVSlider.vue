@@ -2,33 +2,16 @@
   <section class="slider__outer">
     <div class="slider">
       <div class="slider__inner">
-        <swiper :options="swiperOption">
-          <swiper-slide>
-            <div class="card">
-              <img src="/images/img_01.jpg" alt="">
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="card">
-              <img src="/images/img_02.jpg" alt="">
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="card">
-              <img src="/images/img_03.jpg" alt="">
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="card">
-              <img src="/images/img_04.jpg" alt="">
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="card">
-              <img src="/images/img_05.jpg" alt="">
-            </div>
-          </swiper-slide>
-        </swiper>
+        <client-only>
+          <swiper :options="swiperOption">
+            <swiper-slide v-for="(item, key) in pickup" :key="key">
+              <div class="card">
+                <img :src="`/images/${item.image}`" alt="" />
+                <p class="card__title"><span>{{ item.title }}</span></p>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </client-only>
       </div>
       <div class="slider__pagination"></div>
     </div>
@@ -69,6 +52,12 @@ export default Vue.extend({
       },
     }
   },
+  props: ['pickup']
+  // computed: {
+  //   pickup(){
+  //     return this.$store.getters['items/items'].pickup;
+  //   }
+  // }
 })
 </script>
 <style lang="scss" scoped>
@@ -105,11 +94,30 @@ $marginCard: 28px;
 }
 
 .card {
+  position: relative;
   @include media(m){
     width: $wCard;
   }
   img {
     max-width: 100%;
+  }
+  &__title{
+    position: absolute;
+    bottom: 0;
+    height: 3em;
+    width: 100%;
+    line-height: 3;
+    background: rgba($white,0.8);
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+    span {
+      display: inline-block;
+      max-width: 90%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
   }
 }
 

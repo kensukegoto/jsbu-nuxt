@@ -2,11 +2,9 @@
   <div class="container">
     <TheHeader class="TheHeader" />
     <main>
-      <client-only>
-        <MVSlider class="MVSlider" />
-      </client-only>
+      <MVSlider class="MVSlider" :pickup="pickup" />
     </main>
-    {{ loadedPosts }}
+    {{ pickup }}
   </div>
 </template>
 
@@ -22,8 +20,8 @@ export default Vue.extend({
     MVSlider
   },
   computed: {
-    loadedPosts(){
-      return this.$store.state.items
+    pickup(){
+      return this.$store.getters['items/items'].pickup;
     }
   }
 })
