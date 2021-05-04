@@ -1,33 +1,43 @@
+import items from '~/static/all';
+
 export const actions = {
   nuxtServerInit(vuexContext,context){
 
-    return context.app.$axios
-      .$get("/api/data/all.json")
-      .then(items => {
-        // const loadedItems = items.map(item => {
-        //   const d = new Date(item.pubDate);
-        //   const dStr = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
-        //   item = {...item,pubDate:dStr};
-        //   return item;
-        // })
-        const pickupItems = items.filter(item => {
-          return item.pickup;
-        });
-        vuexContext.dispatch("items/setItems",{
-          key: 'all',
-          list: items
-        });
-        vuexContext.dispatch("items/setItems",{
-          key: 'pickup',
-          list: pickupItems
-        });
+    return new Promise((reso) => {
+      const pickupItems = items.filter(item => {
+        return item.pickup;
+      });
+      vuexContext.dispatch("items/setItems",{
+        key: 'all',
+        list: items
+      });
+      vuexContext.dispatch("items/setItems",{
+        key: 'pickup',
+        list: pickupItems
+      });
+      reso();
+    })
+    // return context.app.$axios
+    //   .$get("/api/data/all.json")
+    //   .then(items => {
+    //     const pickupItems = items.filter(item => {
+    //       return item.pickup;
+    //     });
+    //     vuexContext.dispatch("items/setItems",{
+    //       key: 'all',
+    //       list: items
+    //     });
+    //     vuexContext.dispatch("items/setItems",{
+    //       key: 'pickup',
+    //       list: pickupItems
+    //     });
         
-        // vuexContext.commit()
+    //     // vuexContext.commit()
 
-      })
-      .catch(e => {
-        context.error(e)
-      })
+    //   })
+    //   .catch(e => {
+    //     context.error(e)
+    //   })
 
   }, // nuxtServerInit
 }
